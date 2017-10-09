@@ -62,7 +62,7 @@ class HouseState extends FlxState
 		add(_player);
 		
 		FlxG.camera.follow(_player);
-		FlxG.camera.zoom = 2;
+		FlxG.camera.zoom = 1.6;
 		
 		super.create();
 	}
@@ -153,7 +153,7 @@ class HouseState extends FlxState
 	{
 		if (_hasEvidence)
 		{
-			FlxG.camera.fade();
+			FlxG.camera.fade(FlxColor.BLACK, 1, false, function(){FlxG.switchState(new HeistState()); });
 		}
 	}
 	

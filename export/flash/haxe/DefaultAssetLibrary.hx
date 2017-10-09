@@ -65,6 +65,7 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		
 		
+		
 		openfl.text.Font.registerFont (__ASSET__OPENFL__flixel_fonts_nokiafc22_ttf);
 		openfl.text.Font.registerFont (__ASSET__OPENFL__flixel_fonts_monsterrat_ttf);
 		
@@ -78,6 +79,8 @@ class DefaultAssetLibrary extends AssetLibrary {
 		type.set ("assets/data/data-goes-here.txt", AssetType.TEXT);
 		className.set ("assets/data/Debug.oel", __ASSET__assets_data_debug_oel);
 		type.set ("assets/data/Debug.oel", AssetType.TEXT);
+		className.set ("assets/data/Heist.oel", __ASSET__assets_data_heist_oel);
+		type.set ("assets/data/Heist.oel", AssetType.TEXT);
 		className.set ("assets/data/OpenJam.oep", __ASSET__assets_data_openjam_oep);
 		type.set ("assets/data/OpenJam.oep", AssetType.TEXT);
 		className.set ("assets/images/House.0001.png", __ASSET__assets_images_house_0001_png);
@@ -120,6 +123,10 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		type.set (id, AssetType.TEXT);
 		id = "assets/data/Debug.oel";
+		path.set (id, id);
+		
+		type.set (id, AssetType.TEXT);
+		id = "assets/data/Heist.oel";
 		path.set (id, id);
 		
 		type.set (id, AssetType.TEXT);
@@ -210,6 +217,9 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		className.set ("assets/data/Debug.oel", __ASSET__assets_data_debug_oel);
 		type.set ("assets/data/Debug.oel", AssetType.TEXT);
+		
+		className.set ("assets/data/Heist.oel", __ASSET__assets_data_heist_oel);
+		type.set ("assets/data/Heist.oel", AssetType.TEXT);
 		
 		className.set ("assets/data/OpenJam.oep", __ASSET__assets_data_openjam_oep);
 		type.set ("assets/data/OpenJam.oep", AssetType.TEXT);
@@ -905,6 +915,7 @@ class DefaultAssetLibrary extends AssetLibrary {
 
 @:keep @:bind #if display private #end class __ASSET__assets_data_data_goes_here_txt extends flash.utils.ByteArray { }
 @:keep @:bind #if display private #end class __ASSET__assets_data_debug_oel extends flash.utils.ByteArray { }
+@:keep @:bind #if display private #end class __ASSET__assets_data_heist_oel extends flash.utils.ByteArray { }
 @:keep @:bind #if display private #end class __ASSET__assets_data_openjam_oep extends flash.utils.ByteArray { }
 @:keep @:bind #if display private #end class __ASSET__assets_images_house_0001_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
 @:keep @:bind #if display private #end class __ASSET__assets_images_house_png extends flash.display.BitmapData { public function new () { super (0, 0, true, 0); } }
@@ -939,6 +950,7 @@ class DefaultAssetLibrary extends AssetLibrary {
 
 
 
+
 @:keep #if display private #end class __ASSET__flixel_fonts_nokiafc22_ttf extends lime.text.Font { public function new () { super (); name = "Nokia Cellphone FC Small"; } } 
 @:keep #if display private #end class __ASSET__flixel_fonts_monsterrat_ttf extends lime.text.Font { public function new () { super (); name = "Monsterrat"; } } 
 
@@ -954,6 +966,7 @@ class DefaultAssetLibrary extends AssetLibrary {
 
 @:file("assets/data/data-goes-here.txt") #if display private #end class __ASSET__assets_data_data_goes_here_txt extends lime.utils.Bytes {}
 @:file("assets/data/Debug.oel") #if display private #end class __ASSET__assets_data_debug_oel extends lime.utils.Bytes {}
+@:file("assets/data/Heist.oel") #if display private #end class __ASSET__assets_data_heist_oel extends lime.utils.Bytes {}
 @:file("assets/data/OpenJam.oep") #if display private #end class __ASSET__assets_data_openjam_oep extends lime.utils.Bytes {}
 @:image("assets/images/House.0001.png") #if display private #end class __ASSET__assets_images_house_0001_png extends lime.graphics.Image {}
 @:image("assets/images/House.png") #if display private #end class __ASSET__assets_images_house_png extends lime.graphics.Image {}

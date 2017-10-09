@@ -38,6 +38,10 @@ class ApplicationMain {
 		types.push (lime.Assets.AssetType.TEXT);
 		
 		
+		urls.push ("assets/data/Heist.oel");
+		types.push (lime.Assets.AssetType.TEXT);
+		
+		
 		urls.push ("assets/data/OpenJam.oep");
 		types.push (lime.Assets.AssetType.TEXT);
 		
@@ -163,7 +167,7 @@ class ApplicationMain {
 		
 		config = {
 			
-			build: "52",
+			build: "60",
 			company: "ninjaMuffin",
 			file: "OpenJam17",
 			fps: 60,
