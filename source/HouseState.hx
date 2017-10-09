@@ -146,10 +146,11 @@ class HouseState extends FlxState
 		
 	}
 	
-	public function gather():Void
+	public function gather(evidenceType:Bool):Void
 	{
 		_evidence.kill();
 		_hasEvidence = true;
+		Inventory._hasPhone = true;
 	}
 	
 	public function moveToGround():Void
