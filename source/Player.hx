@@ -3,6 +3,7 @@ package;
 import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.system.FlxAssets.FlxGraphicAsset;
+import haxe.macro.CompilationServer.ContextOptions;
 
 /**
  * ...
@@ -113,9 +114,11 @@ class Player extends FlxSprite
 	 * @param	objectOffset
 	 * @param	Callback
 	 * @param	CallbackFunc
+	 * @param	callbackOnly
+	 * Will not only trigger something if called back and not run code for real interactions
 	 */
 	
-	public function interact(object:FlxSprite, _objAnimOnly:Bool,  _animationON:String = "", _animationOFF:String = "", sound:String = null, collision:Bool = false, objectOffset:Float = 0, Callback:Bool = false, CallbackFunc:Void->Void = null)
+	public function interact(object:FlxSprite, _objAnimOnly:Bool,  _animationON:String = "", _animationOFF:String = "", sound:String = null, collision:Bool = false, objectOffset:Float = 0, Callback:Bool = false, CallbackFunc:Void->Void = null, callbackOnly:Bool = false):Void
 	{
 		if (collision)
 		{
@@ -141,6 +144,7 @@ class Player extends FlxSprite
 				
 				if (Callback)
 				{
+					FlxG.log.add("Interaction Callback");
 					CallbackFunc();
 				}
 				
@@ -160,7 +164,7 @@ class Player extends FlxSprite
 				visible = true;
 			}
 			
-			if (interacting)
+			if (interacting && !_objAnimOnly)
 			{
 				this.x = object.x + objectOffset;
 			}

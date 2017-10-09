@@ -34,9 +34,9 @@
   </BG>
   <entities>
     <player id="0" x="608" y="144" />
-    <StairSecond id="1" x="176" y="144" />
-    <StairGround id="2" x="160" y="336" />
     <StairUpRight id="3" x="1728" y="144" />
     <StairDownRight id="4" x="1712" y="336" />
+    <StairSecond id="1" x="208" y="144" />
+    <StairGround id="2" x="208" y="336" />
   </entities>
 </level>

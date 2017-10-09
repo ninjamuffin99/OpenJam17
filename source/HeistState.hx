@@ -6,6 +6,7 @@ import flixel.FlxSprite;
 import flixel.FlxState;
 import flixel.addons.editors.ogmo.FlxOgmoLoader;
 import flixel.tile.FlxTilemap;
+import flixel.util.FlxColor;
 
 /**
  * ...
@@ -123,26 +124,55 @@ class HeistState extends FlxState
 	
 	private function moveSecondLeft():Void
 	{
-		_player.setPosition(_stairSecond.x, _stairSecond.y);
+		FlxG.camera.fade(FlxColor.BLACK, 0.7, false, function(){
+			
+			_player.setPosition(_stairSecond.x, _stairSecond.y);
+			finishFade();
+		});
+		
+		
 		FlxG.log.add("Move Second left");
 	}
 	
 	private function moveGroundLeft():Void
 	{
-		_player.setPosition(_stairGround.x, _stairGround.y);
+		
+		FlxG.camera.fade(FlxColor.BLACK, 0.7, false, function(){
+			
+			_player.setPosition(_stairGround.x, _stairGround.y);
+			finishFade();
+		});
+		
 		FlxG.log.add("Move Ground Left");
 	}
 	
 	private function moveSecondRight():Void
 	{
-		_player.setPosition(_stairUpRight.x, _stairUpRight.y);
+		
+		FlxG.camera.fade(FlxColor.BLACK, 0.7, false, function(){
+			
+			_player.setPosition(_stairUpRight.x, _stairUpRight.y);
+			finishFade();
+		});
+		
 		FlxG.log.add("Move Second Right");
 	}
 	
 	private function moveGroundRight():Void
 	{
-		_player.setPosition(_stairDownRight.x, _stairDownRight.y);
+		
+		FlxG.camera.fade(FlxColor.BLACK, 0.7, false, function(){
+			
+			_player.setPosition(_stairDownRight.x, _stairDownRight.y);
+			finishFade();
+		});
+		
 		FlxG.log.add("Move Ground Right");
+	}
+	
+	private function finishFade():Void
+	{
+		FlxG.camera.fade(FlxColor.BLACK, 1, true);
 	}
 	
 }

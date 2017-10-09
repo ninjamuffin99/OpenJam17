@@ -171,7 +171,7 @@ class ApplicationMain {
 		
 		config = {
 			
-			build: "71",
+			build: "80",
 			company: "ninjaMuffin",
 			file: "OpenJam17",
 			fps: 60,
