@@ -117,28 +117,32 @@ class HeistState extends FlxState
 		_player.interact(_stairSecond, true, "", "", null, false, 0, true, moveGroundLeft);
 		
 		_player.interact(_stairDownRight, true, "", "", null, false, 0, true, moveSecondRight);
-		_player.interact(_stairDownRight, true, "", "", null, false, 0, true, moveGroundRight);
+		_player.interact(_stairUpRight, true, "", "", null, false, 0, true, moveGroundRight);
 		
 	}
 	
 	private function moveSecondLeft():Void
 	{
 		_player.setPosition(_stairSecond.x, _stairSecond.y);
+		FlxG.log.add("Move Second left");
 	}
 	
 	private function moveGroundLeft():Void
 	{
 		_player.setPosition(_stairGround.x, _stairGround.y);
+		FlxG.log.add("Move Ground Left");
 	}
 	
 	private function moveSecondRight():Void
 	{
 		_player.setPosition(_stairUpRight.x, _stairUpRight.y);
+		FlxG.log.add("Move Second Right");
 	}
 	
 	private function moveGroundRight():Void
 	{
 		_player.setPosition(_stairDownRight.x, _stairDownRight.y);
+		FlxG.log.add("Move Ground Right");
 	}
 	
 }
