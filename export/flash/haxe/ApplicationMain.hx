@@ -46,6 +46,10 @@ class ApplicationMain {
 		types.push (lime.Assets.AssetType.TEXT);
 		
 		
+		urls.push ("assets/images/Heist.0001.png");
+		types.push (lime.Assets.AssetType.IMAGE);
+		
+		
 		urls.push ("assets/images/House.0001.png");
 		types.push (lime.Assets.AssetType.IMAGE);
 		
@@ -167,7 +171,7 @@ class ApplicationMain {
 		
 		config = {
 			
-			build: "60",
+			build: "69",
 			company: "ninjaMuffin",
 			file: "OpenJam17",
 			fps: 60,

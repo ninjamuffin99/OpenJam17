@@ -153,7 +153,7 @@ class HouseState extends FlxState
 	{
 		if (_hasEvidence)
 		{
-			FlxG.camera.fade(FlxColor.BLACK, 1, false, function(){FlxG.switchState(new HeistState()); });
+			FlxG.camera.fade(FlxColor.BLACK, 1, false, function(){FlxG.switchState(new TitleTransState()); });
 		}
 	}
 	
