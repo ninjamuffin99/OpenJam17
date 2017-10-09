@@ -38,5 +38,6 @@
     <StairSecond id="2" x="352" y="160" />
     <StairGround id="3" x="208" y="368" />
     <Exit id="4" x="64" y="368" />
+    <Closet id="5" x="160" y="160" />
   </entities>
 </level>

@@ -29,6 +29,8 @@ class HouseState extends FlxState
 	private var _stairGround:FlxSprite;
 	private var _stairSecond:FlxSprite;
 	
+	private var _closet:FlxSprite;
+	
 	
 	override public function create():Void
 	{
@@ -53,6 +55,10 @@ class HouseState extends FlxState
 		_stairSecond.makeGraphic(16, 16);
 		add(_stairSecond);
 		
+		_closet = new FlxSprite();
+		_closet.makeGraphic(16, 16);
+		add(_closet);
+		
 		_exit = new FlxSprite();
 		_exit.makeGraphic(1, 1);
 		add(_exit);
@@ -71,6 +77,8 @@ class HouseState extends FlxState
 	{
 		var x:Int = Std.parseInt(entityData.get("x"));
 		var y:Int = Std.parseInt(entityData.get("y"));
+		
+		
 		
 		if (entityName == "player")
 		{
@@ -108,6 +116,17 @@ class HouseState extends FlxState
 			_exit.y = y;
 		}
 		
+		if (entityName == "Closet")
+		{
+			entityPlacementHandler(_closet, x, y);
+		}
+		
+	}
+	
+	private function entityPlacementHandler(entity:FlxObject, X:Int, Y:Int)
+	{
+		entity.x = X;
+		entity.y = Y;
 	}
 
 	override public function update(elapsed:Float):Void
@@ -122,6 +141,8 @@ class HouseState extends FlxState
 		_player.interact(_stairGround, true, "", "", null, false, 0, true, moveToSecond);
 		
 		_player.interact(_exit, true, "", "", null, false, 0, true, exitHouse);
+		
+		_player.interact(_closet, true, "", "", null, false, 0, true, enterCloset);
 		
 	}
 	
@@ -155,6 +176,15 @@ class HouseState extends FlxState
 		{
 			FlxG.camera.fade(FlxColor.BLACK, 1, false, function(){FlxG.switchState(new TitleTransState()); });
 		}
+	}
+	
+	public function enterCloset():Void
+	{
+		var _closetState:Closet;
+		_closetState = new Closet();
+		_closetState.persistentUpdate = true;
+		_closetState.persistentDraw = false;
+		openSubState(_closetState);
 	}
 	
 	private function finishFade():Void
